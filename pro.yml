@@ -36,7 +36,7 @@ logging:
   level:
     com.hand.ithuangyonghua: debug  #打印sql
 person:
-  name: 测试黄金
+  name: dev测试环境
   age: 26
 ---
 server:
@@ -72,8 +72,8 @@ logging:
   level:
     com.hand.ithuangyonghua: debug  #打印sql
 person:
-  name: 测试黄金
-  age: 26
+  name: sit测试环境
+  age: 22
 ---
 server:
   port: 8001
@@ -108,5 +108,5 @@ logging:
   level:
     com.hand.ithuangyonghua: debug  #打印sql
 person:
-  name: 测试黄金
-  age: 26
+  name: prod测试环境
+  age: 20
