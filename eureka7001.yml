@@ -1,0 +1,52 @@
+spring:
+  profiles:
+    active:
+     - dev
+---
+server:
+  port: 7001
+spring:
+  profiles: dev
+  application:
+    name: eureka7001.com  #设置微服务名称
+eureka:
+  instance:
+    instance-id: eureka7001.com-dev
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+---
+server:
+  port: 7001
+spring:
+  profiles: sit
+  application:
+    name: eureka7001.com  #设置微服务名称
+eureka:
+  instance:
+    instance-id: eureka7001.com-sit
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+---
+server:
+  port: 7001
+spring:
+  profiles: prod
+  application:
+    name: eureka7001.com  #设置微服务名称
+eureka:
+  instance:
+    instance-id: eureka7001.com-prod
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
