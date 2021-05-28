@@ -1,0 +1,112 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8001
+mybatis:
+  type-aliases-package: com.hand.ithuangyonghua.entity    # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+  configuration:
+    map-underscore-to-camel-case: true
+eureka:
+  instance:
+    instance-id: priveate-hystrix-8001
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+spring:
+  profiles: dev
+  application:
+    name: priveate #设置应用程序名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/hand_train
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    com.hand.ithuangyonghua: debug  #打印sql
+person:
+  name: 测试黄金
+  age: 26
+---
+server:
+  port: 8001
+mybatis:
+  type-aliases-package: com.hand.ithuangyonghua.entity    # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+  configuration:
+    map-underscore-to-camel-case: true
+eureka:
+  instance:
+    instance-id: priveate-hystrix-8001
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+spring:
+  profiles: sit
+  application:
+    name: priveate #设置应用程序名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/hand_train
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    com.hand.ithuangyonghua: debug  #打印sql
+person:
+  name: 测试黄金
+  age: 26
+---
+server:
+  port: 8001
+mybatis:
+  type-aliases-package: com.hand.ithuangyonghua.entity    # 所有Entity别名类所在包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+  configuration:
+    map-underscore-to-camel-case: true
+eureka:
+  instance:
+    instance-id: priveate-hystrix-8001
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+spring:
+  profiles: prod
+  application:
+    name: priveate #设置应用程序名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/hand_train
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    com.hand.ithuangyonghua: debug  #打印sql
+person:
+  name: 测试黄金
+  age: 26
